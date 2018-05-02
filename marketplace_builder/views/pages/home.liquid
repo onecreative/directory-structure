@@ -1,9 +1,10 @@
 ---
 slug: /
 format: html
-layout_name: 1col
+layout: 1col
 name: Home
+metadata:
+  title: Home Page
 ---
-{%- assign name = 'Home' -%}
-{%- content_for 'pagetitle' -%}{{name}}{%- endcontent_for -%}
-<h1>{{name}}</h1>
+{%- content_for 'pagetitle' -%}{{page.metadata.title}}{%- endcontent_for -%}
+<h1>{{page.metadata.title}}</h1>
