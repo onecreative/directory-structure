@@ -1,0 +1,12 @@
+user:
+  phone: string
+model:
+  organization:
+    _owner: user
+    name: string
+  member:
+    _owner: user
+    _parent: organization
+  product:
+    _parent: organization
+    name: string

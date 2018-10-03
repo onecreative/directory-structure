@@ -1,0 +1,8 @@
+query organizations {
+	model(type: "organization") {
+		results {
+			_slug
+			name
+		}
+	}
+}

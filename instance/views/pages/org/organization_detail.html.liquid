@@ -1,0 +1,24 @@
+---
+name: organization_detail
+resource: model/organization
+slug: organizations/:_slug
+layout: 1col
+policies: [is_org_member]
+---
+<h1>{{resource.name}}</h1>
+
+{% query_graph 'organization_children', id: resource._id, result_name: 'org_children' %}
+
+<h2>Members</h2>
+<ul>
+	{% for member in org_children.members.results -%}
+		<li><a href="{{page._slug}}/{{member._slug}}">{{member.owner.first_name}} {{member.owner.last_name}}</a></li>
+	{% endfor -%}
+</ul>
+
+<h2>Products</h2>
+<ul>
+	{% for product in org_children.products.results -%}
+		<li><a href="{{page._slug}}/{{product._slug}}">{{product.name}}</a></li>
+	{% endfor -%}
+</ul>

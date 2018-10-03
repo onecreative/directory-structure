@@ -1,0 +1,17 @@
+---
+name: sendgrid_example
+type: sendgrid
+to: {{ form.email }}
+delay: 0
+enabled: true
+trigger_condition: false
+from: no-reply@example.com
+reply_to: no-reply@example.com
+cc:
+bcc:
+subject: Welcome {{ form.first_name }} in our marketplace!
+layout_path: mailer
+---
+<h1>Hi {{ form.first_name }}!</h1>
+<p>Welcome in our marketplace!</p>
+{% comment %} Note: Trigger condition is set to false, just in case someone actually deploys this example to production :) {% endcomment %}

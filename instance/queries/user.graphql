@@ -1,0 +1,8 @@
+query user($id: ID) {
+	users(filter: {_id: $id}) {
+		results {
+			first_name
+     		last_name
+		}
+	}
+}

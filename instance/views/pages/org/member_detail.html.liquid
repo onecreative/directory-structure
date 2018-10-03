@@ -1,0 +1,13 @@
+---
+name: member_detail
+resource: model/member
+parent: organization_detail
+slug: members/:_slug
+layout: 1col
+---
+
+{% query_graph 'user', id: resource._owner, result_name: 'g' %}
+{% assign user = g.users.results[0] -%}
+
+<h1>{{user.first_name}} {{user.last_name}}</h1>
+<p>Phone: {{user.phone}}</p>

@@ -1,0 +1,10 @@
+---
+name: is_org_member
+redirect_to: /unauthorized
+flash_alert: "Sorry, this won't fly"
+---
+{% query_graph 'this_org_member', org: resource._id, user: context.current_user.id, result_name: 'g' %}
+{% if g.results[0] -%}true
+{% else -%}false
+{% endif -%}
+

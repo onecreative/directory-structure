@@ -1,0 +1,13 @@
+---
+name: organizations
+slug: organizations
+layout: 1col
+---
+<h1>Organizations</h1>
+
+{% query_graph 'organizations', result_name: 'orgs' %}
+<ul>
+	{% for org in orgs.results -%}
+		<li><a href="organizations/{{org._slug}}">{{org.name}}</a></li>
+	{% endfor -%}
+</ul>

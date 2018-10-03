@@ -1,0 +1,9 @@
+query this_org_member($org: ID!, $user: ID!) {
+	members: model(type: "member", filter: {_parent: $org, _owner: $user}) {
+		results {
+			owner: _owner_record {
+
+			}
+		}
+	}
+}
