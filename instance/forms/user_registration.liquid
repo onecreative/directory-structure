@@ -10,7 +10,10 @@ fields:
     label: Last Name
     validation:
     - rule: presence
-      error: '{{form.fields.last_name.label}} must be provided'
+      error: '{{form.fields.last_name.label}} must be provided' # maciek: having a form_builder, preferably renamed to form is 
+      great idea. Defining built in validation as array seems to be semantic issue, as it does not make sense to add multiple errors for
+      "presence" etc - using hash, as it's currently, seems ok to me. IIRC, the main idea was to allow developer to their own 
+      validations - that's something we have recently added, we need to add documentation for it - the idea is quite similar.
   email:
     label: Email
   password:
