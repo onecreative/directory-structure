@@ -1,7 +1,16 @@
 ---
 name: user_registration
 resource: User
+fields: # maciek: my intention was to rename `custom_attributes` to `fields` in custom_model_type.yml files etc, and then to
+rename `properties` within configuration to `fields` as well. If we rename `configuration` to `fields` here, we would have
+```
 fields:
+  first_name: 
+  fields:
+    custom_attr_1:
+```
+which would be quite confusing
+
   first_name:
     label: First Name
     validation:
