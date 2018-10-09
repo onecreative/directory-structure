@@ -3,7 +3,24 @@ name: user_registration
 resource: User
 fields:
   first_name:
+    label: First Name # maciek: the question is - is there a value of having to define label per form configuration? I would assume 
+the main benefit of using this feature would be to define DRY up code, i.e. do not have to repeat label in all various forms which allow
+user to edit first name. We have recently added possibility to add `metadata` to custom attributes, and it seems like a better place, because
+it's globally attribute, not per form. Moreover, it will work only for one language; I think better way of handling labels, placeholders etc
+would be to define metadata on custom attribute label to something like 'user.first_name' and then use `translations` feature to define the actual value
+based on the current language. 
+
+Another way to look at this feature is to allow to not only provide `metadata` on attribute level, but also at form level as well, in which scenario it would look more like
+```
+first_name:
+  metadata:
     label: First Name
+    custom_prop: Something 
+```
+I am just not seeing proper use case for it. There are two issues with metadata on custom attribute currently:
+1. We don't inject it to `form_builder` currently - something we want and need to do
+2. It will be possible only for custom attributes, not system fields - but the long term plan is to remove necessity of using system fields anyway
+
     validation:
     - rule: not_empty
   last_name:
