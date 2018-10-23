@@ -5,20 +5,19 @@ fields:
   first_name:
     label: First Name
     validation:
-    - rule: not_empty
+      my_rule_w_default_message
   last_name:
     label: Last Name
     validation:
-    - rule: presence
-      error: '{{form.fields.last_name.label}} must be provided'
+      presence: '{{form.fields.last_name.label}} must be provided'
   email:
     label: Email
   password:
     label: Password
   organization:
     label: Organization
-    map: models/organization:name
+    map: organization:name
+    parent: User
     validation:
-    - rule: presense
-      error: '{{form.fields.organization.label}} must be provided'
+      presense: '{{form.fields.organization.label}} must be provided'
 ---

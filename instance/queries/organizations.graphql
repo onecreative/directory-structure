@@ -1,5 +1,5 @@
 query organizations {
-	model(type: "organization") {
+	organization {
 		results {
 			_slug
 			name

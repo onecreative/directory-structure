@@ -1,5 +1,5 @@
 query organization_children($id: ID) {
-	members: model(type: "member", filter: {_parent: $id}) {
+	members: member(filter: {_parent: $id}) {
 		results {
 			_slug
 			owner: _owner_record {
@@ -7,7 +7,7 @@ query organization_children($id: ID) {
 			}
 		}
 	}
-	products: model(type: "product", filter: {_parent: $id}) {
+	products: product(filter: {_parent: $id}) {
 		results {
 			_slug
 			name
