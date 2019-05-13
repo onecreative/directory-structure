@@ -6,6 +6,9 @@ fields:
     label: First Name
     validation:
       my_rule_w_default_message
+    value: 
+      initial:
+      final: '{{form.fields.first_name.value | default: form.fields.email.value}}'
   last_name:
     label: Last Name
     validation:
