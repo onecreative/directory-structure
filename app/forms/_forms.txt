@@ -1,0 +1,30 @@
+Processing Order:
+
+1. `authorization_policies`
+
+2. `validation`
+    (this includes only data that is submitted with the form)
+
+3. `final`
+	(individual field data manipulation via the `final` property on the individual field configurations)
+
+4. `payload`
+	(general field data manipulation before submission)
+
+5. Submission to data storage
+
+6. `sync_callbacks`
+    1. `tasks`
+    2. `notification` (email, sms, api)
+    3. `inline`
+    4. In the order they are specified in the configuration
+    5. Each will finish before the next begins
+    6. The last will finish before the next step begins
+
+7. `async_callbacks`
+    1. `tasks`
+    2. `notifications`
+    3. `inline`
+    4. non-blocking
+	
+8. `redirect_to`
