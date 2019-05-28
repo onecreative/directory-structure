@@ -1,3 +1,0 @@
-- Callbacks are actions triggered by form submissions.
-- The `type` property has a default value of `api`. If type isn't specified, this value will be used.
-- Other possible `type` values are determined by the integrations available on your instance, as determined in the instance settings in the partner portal.

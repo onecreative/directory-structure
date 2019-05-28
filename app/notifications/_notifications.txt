@@ -1,0 +1,3 @@
+- Notifications are api actions with a `to`, `from` and `body` contents.
+- The `type` property has a default value of `api`.
+- Other possible `type` values are determined by the integrations available on your instance, as determined in the instance settings in the partner portal.

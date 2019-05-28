@@ -1,26 +1,44 @@
 ---
 name: user_registration
 resource: User
+authorization_policies:
 fields:
   first_name:
     label: First Name
     validation:
-      my_rule_w_default_message
+      - my_rule_w_default_message:
     value: 
       initial:
-      final: '{{form.fields.first_name.value | default: form.fields.email.value}}'
+      final:
   last_name:
     label: Last Name
     validation:
-      presence: '{{form.fields.last_name.label}} must be provided'
+      presence: "{{form.fields.last_name.label}} must be provided"
   email:
     label: Email
   password:
     label: Password
   organization:
     label: Organization
-    map: organization:name
-    parent: User
+    map: modules/company/organization.name
     validation:
-      presense: '{{form.fields.organization.label}} must be provided'
+      modules/organization/unique_name: "{{form.fields.organization.label}} name is already taken."
+  user_id:
+    label: User ID
+    map: modules/company/organization.user_id
+    value:
+      final: "{{form.id}}"
+payload: >
+  {
+    "first_name": "{{form.fields.first_name.value | default: form.fields.email.value}}"
+  }
+sync_callbacks:
+  tasks:
+  notifications:
+  inline: >
+async_callbacks:
+  tasks:
+  notificatins:
+  inline: >
+redirect_to:
 ---

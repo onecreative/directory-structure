@@ -1,0 +1,1 @@
+Tasks are scheduled background jobs. You can do just about anything from a task, including performing queries and mutations, sending notifications, or even beginning (or ending) other tasks.
