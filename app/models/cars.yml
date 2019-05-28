@@ -1,0 +1,8 @@
+name: cars
+properties:
+  - name: make
+    type: string
+  - name: model
+    type: string
+  - name: year
+    type: date
