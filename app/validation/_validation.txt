@@ -1,0 +1,1 @@
+Validation files can be used in forms or policies. Their body consists of liquid logic that determines if the validation passes or should return an error message. Anything outputted onto the page is considered an error message.
