@@ -1,6 +1,8 @@
 ---
 name: user_registration
 resource: User
+policies:
+  - modules/company/is_org_member
 fields:
   first_name:
     label: First Name

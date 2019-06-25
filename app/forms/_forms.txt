@@ -5,9 +5,6 @@ Processing Order:
 2. `validation`
     (this includes only data that is originally submitted with the form)
 
-3. `final`
-	(individual field data manipulation via the `final` property on the individual field configurations)
-
 4. `payload`
 	(general field data manipulation before submission)
 
@@ -26,5 +23,5 @@ Processing Order:
     2. `notifications`
     3. `inline`
     4. non-blocking
-	
+
 8. `redirect_to`

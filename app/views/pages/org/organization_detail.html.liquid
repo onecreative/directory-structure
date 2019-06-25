@@ -3,7 +3,7 @@ name: organization_detail
 resource: model/organization
 slug: organizations/:_slug
 layout: 1col
-policies: [is_org_member]
+policies: [modules/company/is_org_member]
 ---
 <h1>{{resource.name}}</h1>
 
