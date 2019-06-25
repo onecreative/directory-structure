@@ -1,15 +1,10 @@
 ---
 name: user_registration
 resource: User
-authorization_policies:
 fields:
   first_name:
     label: First Name
-    validation:
-      - my_rule_w_default_message:
-    value: 
-      initial:
-      final:
+    value: Frank
   last_name:
     label: Last Name
     validation:
@@ -26,11 +21,20 @@ fields:
   user_id:
     label: User ID
     map: modules/company/organization.user_id
-    value:
-      final: "{{form.id}}"
+  country:
+    label: Country
+    value: 5
+    options:
+      - label: Canada
+        value: 3
+      - label: Poland
+        value: 4
+      - label: United States
+        value: 5
 payload: >
   {
-    "first_name": "{{form.fields.first_name.value | default: form.fields.email.value}}"
+    "first_name": "{{form.fields.first_name.value | default: form.fields.email.value}}",
+    "user_id": "{{form.id}}"
   }
 sync_callbacks:
   tasks:
