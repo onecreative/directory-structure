@@ -17,21 +17,21 @@ fields:
     label: Password
   organization:
     label: Organization
-    map: modules/company/organization.name
+    map: modules/company/organization/{:name}
     validation:
       modules/organization/unique_name: "{{form.fields.organization.label}} name is already taken."
   user_id:
     label: User ID
-    map: modules/company/organization.user_id
+    map: modules/company/organization/{:user_id}
   country:
     label: Country
     value: 5
     options:
-      - label: Canada
+      - text: Canada
         value: 3
-      - label: Poland
+      - text: Poland
         value: 4
-      - label: United States
+      - text: United States
         value: 5
 payload: >
   {
